@@ -1,0 +1,266 @@
+/* =========================================
+   SERVICES PAGE BASE & MULTI-COLOUR BACKGROUND
+   ========================================= */
+.services-page {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  
+  /* ✨ Same Multi-Colour Background as About Page */
+  background: linear-gradient(-45deg, #ffdee9, #b5fffc, #e0c3fc, #8ec5fc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Animation Keyframes for Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Shapes (Blobs) */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.5;
+  animation: floatShape 10s infinite alternate ease-in-out;
+}
+
+.shape-s1 {
+  top: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+}
+
+.shape-s2 {
+  bottom: 10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: #ffffff;
+}
+
+@keyframes floatShape {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(1.1); }
+}
+
+.services-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #1a1a1a;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.services-header h1 span {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-header p {
+  font-size: 1.15rem;
+  color: #333;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SERVICES GRID & CARDS
+   ========================================= */
+.services-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  /* Glassmorphism effect for cards so they pop over the gradient */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Gradient Line on Hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(106, 17, 203, 0.15);
+  background: #ffffff;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f6f8fd, #e0c3fc);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(224, 195, 252, 0.4);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-desc {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* Feature List */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.service-features li span {
+  color: #2575fc;
+  font-weight: bold;
+}
+
+/* Button */
+.service-btn {
+  background: transparent;
+  color: #6a11cb;
+  border: 2px solid #6a11cb;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.service-btn:hover {
+  background: #6a11cb;
+  color: white;
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+}
+
+/* =========================================
+   CTA SECTION
+   ========================================= */
+.cta-section {
+  margin-top: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  padding: 60px 20px;
+  border-radius: 30px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(106, 17, 203, 0.3);
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background: white;
+  color: #6a11cb;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .services-page {
+    padding-top: 60px;
+  }
+  
+  .services-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section {
+    padding: 40px 20px;
+  }
+}

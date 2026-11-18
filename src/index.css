@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden; /* Sirf horizontal scroll rokne ke liye */
+  /* height: 100vh;  <-- Agar hai toh hata dein */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

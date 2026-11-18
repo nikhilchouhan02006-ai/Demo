@@ -1,0 +1,219 @@
+.home-container {
+  padding-top: 70px;
+}
+
+.section {
+  padding: 80px 20px;
+}
+
+.light-bg {
+  background-color: #f8f9fa;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.container p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.carousel {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.carousel-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-content {
+  color: white;
+  max-width: 800px;
+}
+
+.badge {
+  background: #007bff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.carousel-content h1 {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.carousel-content p {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.contact-box {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .carousel-content h1 {
+    font-size: 2rem;
+  }
+  .carousel-content p {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Base Container */
+.home-container {
+  padding-top: 70px; /* Navbar ke niche se start hoga */
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Carousel Setup */
+.carousel {
+  position: relative;
+  height: 85vh; /* Thoda adjust kiya taaki niche ka content view mein aaye */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Section Setup (About, Services, Contact) */
+.section {
+  padding: 80px 20px;
+  position: relative;
+  z-index: 10; /* Taaki yeh carousel ke upar dikhe */
+}
+
+.light-bg {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  position: relative;
+  display: inline-block;
+}
+
+/* Heading ke niche wali neon line */
+.container h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #96e6a1; /* Aap apna theme colour yahan daal sakte hain */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.container p {
+  color: #444;
+  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
